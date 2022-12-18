@@ -1,0 +1,48 @@
+PreferredAuthentications publickey,password
+Host phyma
+  HostName login.phyma.uni-konstanz.de
+  User esteiner
+Host phyma-x11
+  HostName login.phyma.uni-konstanz.de
+  User esteiner
+  ForwardX11 yes
+  ForwardX11Trusted no
+Host saruman
+  HostName saruman.physik.uni-konstanz.de
+  ProxyJump phyma
+  User esteiner
+Host mc
+  HostName mc.steinr.eu
+  User ubuntu
+Host hagrid
+  HostName hagrid.steinr.eu
+  User ubuntu
+Host quirrel
+  HostName quirrel.steinr.eu
+  User ubuntu
+Host rado-sever
+  HostName 192.168.0.14
+  User emil
+Host dumbledore
+  HostName dumbledore.steinr.eu
+  User ubuntu
+Host flitwick
+  HostName flitwick.lan.steinr.eu
+  User pi
+Host lockhart
+  HostName lockhart.steinr.eu
+  User ubuntu
+Host boba
+  HostName boba.physik.uni-konstanz.de
+  User esteiner
+Host snape
+  HostName snape.lan.steinr.eu
+  User emil
+Host pc
+  HostName 192.168.42.11
+  User emil
+  ForwardX11 yes
+  ForwardX11Trusted no
+Host bwunicluster
+  HostName uc2.scc.kit.edu
+  User kn_pop531029
