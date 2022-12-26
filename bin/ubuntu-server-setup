@@ -1,22 +1,29 @@
 #!/bin/sh
 
 PACKAGE_MANAGER=nala
+RED='\033[0;31m'
+NC='\033[0m'
 
 set -e
 
-echo "updating"
+announce() {
+   echo -e "$RED$1$NC\n"
+}
+
+announce "updating"
+
 sudo apt update && sudo apt upgrade
 
-echo "installing essentials from default repos"
+announce "installing essentials from default repos"
 sudo apt install \
    fish \
    screenfetch \
    $PACKAGE_MANAGER
 
-echo "setting up fish"
+announce "setting up fish"
 fish $HOME/.dotfiles/alias/package-manager/$PACKAGE_MANAGER.fish
 
-echo "installing docker"
+announce "installing docker"
 
 sudo $PACKAGE_MANAGER remove docker docker-engine docker.io containerd runc
 
@@ -36,3 +43,5 @@ echo \
 sudo $PACKAGE_MANAGER update
 
 sudo $PACKAGE_MANAGER install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+announce "finished"
