@@ -1,4 +1,4 @@
 #!/bin/fish
-abbr -ag in "sudo apt install"
-abbr -ag up "sudo apt update && sudo apt upgrade"
-abbr -ag se "sudo apt search"
+abbr -a in "sudo apt install"
+abbr -a up "sudo apt update && sudo apt upgrade"
+abbr -a se "sudo apt search"
