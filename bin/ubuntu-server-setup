@@ -1,6 +1,6 @@
 #!/bin/sh
 
-$PACKAGE_MANAGER=nala
+PACKAGE_MANAGER=nala
 
 set -e
 
