@@ -1,0 +1,46 @@
+#!/bin/python3
+import json
+import requests
+import argparse
+
+parser = argparse.ArgumentParser(description = "Bulk delete cloudflare dns records")
+ 
+    # defining arguments for parser object
+parser.add_argument("-z", "--zone", type = str, nargs = 1,
+                        metavar = "<zone id>", default = None,
+                        help = "You can get zone ID from Overview page on the bottom right section")
+     
+parser.add_argument("-t", "--token", type = str, nargs = 1,
+                        metavar = "<bearer token>", default = None,
+                        help = "You need to generate api token from My Profile > API Token with Edit Zone permission")
+     
+
+    # parse the arguments from standard input
+args = parser.parse_args()
+
+
+# You can get zone ID from Overview page on the bottom right section
+zoneid = args.zone[0]
+
+# You need to generate api token from My Profile > API Token with Edit Zone permission
+bearer_token = args.token[0]
+
+
+if input("Are you sure you want to delete ALL DNS records in this zone? (y/N)") != "y":
+    exit()
+
+
+# Fetch dns records from CloudFlare
+record_rq = requests.get(f"https://api.cloudflare.com/client/v4/zones/{zoneid}/dns_records", headers = {"Content-Type": "application/json", "Authorization": f"Bearer {bearer_token}"})
+data = record_rq.json()
+if data['success'] == False:
+    print("Failed to fetch dns record:")
+    print(data['errors'])
+    quit()
+
+# Delete dns records
+for record in data['result']:
+    print("Deleting:", record['name'])
+    rq = requests.delete(f"https://api.cloudflare.com/client/v4/zones/{zoneid}/dns_records/{record['id']}", headers = {"Content-Type": "application/json", "Authorization": f"Bearer {bearer_token}"})
+    print(rq.status_code, "\n")
+
