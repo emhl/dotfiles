@@ -46,3 +46,13 @@ Host pc
 Host bwunicluster
   HostName uc2.scc.kit.edu
   User kn_pop531029
+Host lupin
+  HostName lupin.steinr.eu
+  User ubuntu
+Host snape-cf
+  HostName snape-ssh.steinr.eu
+  ProxyCommand cloudflared access ssh --hostname %h
+  User emil
+Host dobby
+  Hostname dobby.steinr.eu
+  User azureuser

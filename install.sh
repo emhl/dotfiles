@@ -101,6 +101,7 @@ link_file () {
   fi
 }
 
+which fish
 
 install_dotfiles () {
   info 'installing dotfiles'
