@@ -53,6 +53,6 @@ Host snape-cf
   HostName snape-ssh.steinr.eu
   ProxyCommand cloudflared access ssh --hostname %h
   User emil
-Host dobby
-  Hostname dobby.steinr.eu
+Host hedwig
+  Hostname hedwig.steinr.eu
   User azureuser
