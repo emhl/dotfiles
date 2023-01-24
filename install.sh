@@ -118,6 +118,7 @@ echo ''
 echo '  All installed!'
 echo ''
 
-fish "alias/color.fish"
+info 'initializing fish shell'
 
-fish_add_path "$DOTFILES_ROOT/bin"
+fish "init-shell.fish"
+
