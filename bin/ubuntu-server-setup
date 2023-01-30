@@ -25,7 +25,8 @@ fish $HOME/.dotfiles/alias/package-manager/$PACKAGE_MANAGER.fish
 
 announce "installing docker"
 
-sudo $PACKAGE_MANAGER remove docker docker-engine docker.io containerd runc
+# remove old install
+#sudo $PACKAGE_MANAGER remove docker docker-engine docker.io containerd runc
 
 sudo $PACKAGE_MANAGER install \
     ca-certificates \
