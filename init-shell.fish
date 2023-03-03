@@ -15,6 +15,6 @@ alias -s ip='ip -color=auto'
 #set -xU LESS '-R --use-color -Dd+r$Du+b'
 alias -s ls='ls --color=auto'
 
-announce "add path"
+#announce "add path"
 
-fish_add_path "~/.dotfiles/bin"
+#fish_add_path "~/.dotfiles/bin"
