@@ -56,3 +56,9 @@ Host snape-cf
 Host hedwig
   Hostname hedwig.steinr.eu
   User azureuser
+Host potter
+  HostName potter.steinr.eu
+  User ubuntu
+Host bezirk
+  hostname dpsg-bodensee.de
+  User admin
