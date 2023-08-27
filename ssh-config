@@ -1,12 +1,18 @@
 PreferredAuthentications publickey,password
+AddressFamily inet
 Host phyma
   HostName login.phyma.uni-konstanz.de
   User esteiner
-Host phyma-x11
-  HostName login.phyma.uni-konstanz.de
-  User esteiner
-  ForwardX11 yes
-  ForwardX11Trusted no
+Host scc
+  HostName scc.uni-konstanz.de
+  User emil.steiner
+Host scc2
+  HostName scc2.uni-konstanz.de
+  User emil.steiner
+Host unipc
+  HostName pascal.physik.uni-konstanz.de
+  User emil.steiner
+  ProxyJump scc
 Host saruman
   HostName saruman.physik.uni-konstanz.de
   ProxyJump phyma
@@ -16,6 +22,9 @@ Host mc
   User ubuntu
 Host hagrid
   HostName hagrid.steinr.eu
+  User ubuntu
+Host tunnel
+  HostName tunnel.steinr.eu
   User ubuntu
 Host quirrel
   HostName quirrel.steinr.eu
@@ -39,7 +48,7 @@ Host snape
   HostName snape.lan.steinr.eu
   User emil
 Host pc
-  HostName 192.168.42.11
+  HostName pc.lan.steinr.eu
   User emil
   ForwardX11 yes
   ForwardX11Trusted no
@@ -54,11 +63,14 @@ Host snape-cf
   ProxyCommand cloudflared access ssh --hostname %h
   User emil
 Host hedwig
-  Hostname hedwig.steinr.eu
+  HostName hedwig.steinr.eu
   User azureuser
 Host potter
   HostName potter.steinr.eu
   User ubuntu
 Host bezirk
-  hostname dpsg-bodensee.de
-  User admin
+  HostName dpsg-bodensee.de
+  User emil
+Host netcup
+  HostName ae8d9.netcup.net
+  User hosting189178
