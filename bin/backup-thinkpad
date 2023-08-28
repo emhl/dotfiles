@@ -1,0 +1,16 @@
+#!/bin/sh
+#check if connected to Kupfer-Datenautobahn wifi
+CONNECTION=$(nmcli connection show --active | grep "Kupfer-Datenautobahn")
+DESTINATION="snape:/backup/emil/thinkpad"
+
+# ckeck if CONNECTION string is empty
+if [ -z "$CONNECTION" ]
+then
+    echo "not connected to Kupfer-Datenautobahn"
+    exit 1
+else
+    echo "connected to Kupfer-Datenautobahn"
+    # rsync to backup server
+    rsync -avz --delete --exclude=code $HOME/Dokumente/ $DESTINATION/Dokumente/
+    exit 0
+fi
