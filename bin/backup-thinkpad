@@ -11,6 +11,6 @@ then
 else
     echo "connected to Kupfer-Datenautobahn"
     # rsync to backup server
-    rsync -avz --delete --exclude=code $HOME/Dokumente/ $DESTINATION/Dokumente/
+    rsync -haviz --delete --exclude=code $HOME/Dokumente/ $DESTINATION/Dokumente/
     exit 0
 fi
