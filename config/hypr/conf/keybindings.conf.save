@@ -14,7 +14,7 @@ bind=SUPERSHIFT,Q,exit,
 # bind=SUPER,E,exec,pcmanfm
 bind=SUPER,R,exec, rofi -show drun
 bind=SUPER,S,exec, wdisplays
-bind=SUPER,ESCAPE,exec,soystemctl suspend && ~/.config/hypr/scripts/lock.sh
+bind=SUPER,ESCAPE,exec,systemctl suspend && ~/.config/hypr/scripts/lock.sh
 bind=SUPER_SHIFT,ESCAPE,exec,shutdown now
 bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
 bind = SUPER_CTRL, L, exec, ~/.config/hypr/scripts/lock.sh
@@ -29,15 +29,15 @@ bindle=,XF86MonBrightnessDown,exec,brightnessctl set 5%- -n -e # decrease screen
 bind=SUPER,M,exec, ~/.config/hypr/scripts/toggle-notifications.sh
 bind=SUPER_SHIFT,C,exec,bash ~/.config/hypr/scripts/hyprPicker.sh
 bind=SUPER_SHIFT,E,exec,wlogout
-bind = SUPER, T, togglefloating,
+bind= SUPER, T, togglefloating,
 # bind=SUPERSHIFT,P,exec,pomotroid --in-process-gpu
 
 # Screen shot
-bind=SUPER_SHIFT,S,exec,hyprshot -m region -o ~/Pictures/Screnshots
+bind=SUPER_SHIFT,S,exec,grim -g "$(slurp)" - | swappy -f -
 # Screen recorder
 # bind=SUPER,R,exec,wf-recorder -g "$(slurp)"
 # Emoji selector
-#bind=SUPER,E,exec,rofi -modi emoji -show emoji
+bind=SUPER,E,exec,rofi -modi emoji -show emoji
 
 
 bind=SUPERSHIFT,RETURN,layoutmsg,swapwithmaster
@@ -45,8 +45,8 @@ bind=SUPERSHIFT,RETURN,layoutmsg,swapwithmaster
 # bind=SUPER,j,layoutmsg,cyclenext
 # bind=SUPER,k,layoutmsg,cycleprev
 
-#bind=SUPER,m,exec,birdtray --toggle-tb
-#bind=SUPERSHIFT,n,exec,bash ~/.config/hypr/scripts/toggle-netbird.sh
+bind=SUPER,m,exec,birdtray --toggle-tb
+bind=SUPERSHIFT,n,exec,bash ~/.config/hypr/scripts/toggle-netbird.sh
 bind=SUPERSHIFT,b,exec,bash ~/.config/hypr/scripts/toggle-avahi-deamon.sh
 
 
